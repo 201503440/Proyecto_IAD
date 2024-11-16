@@ -14,6 +14,9 @@ df_players_wrangled, df_leagues_wrangled = wrangle_data(df_players_cleaned, df_l
 df_players_transformed, df_leagues_transformed = transformation_data(df_players_wrangled, df_leagues_wrangled)
 
 # Guardar el resultado final
-f.save_dataset_to_csv(dataset=df_players_transformed, filename='df_leaguesFinal.csv')
-f.save_dataset_to_csv(dataset=df_leagues_transformed, filename='df_playersFinal.csv')
+f.save_dataset_to_csv(dataset=df_players_transformed, filename='df_playersFinal.csv')
+f.save_dataset_to_csv(dataset=df_leagues_transformed, filename='df_leaguesFinal.csv')
 print('Resultado final, guardado.')
+
+
+f.generar_pdf('../Documentation/informe_CS.pdf', df_players_F=df_players_transformed)
